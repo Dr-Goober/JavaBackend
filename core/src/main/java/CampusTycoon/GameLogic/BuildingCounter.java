@@ -10,7 +10,7 @@ public class BuildingCounter {
 	private static int totalBuildingCount = 0;
 
 	// [0] = "Accommodation", [1] = "Study", [2] = "Cafeteria", [3] = "Relaxation",
-	// [4] = "null", [5] = "Restaurant"
+	// [5] = "null", [4] = "Restaurant"
 	private static int[] buildingCounts = new int[6];
 	public static List<MenuText> UI = new ArrayList<MenuText>();
 	public static MenuText totalCountUI;
@@ -54,9 +54,9 @@ public class BuildingCounter {
 			case Relaxation.buildingName:
 				return 3;
 			case Restaurant.buildingName:
-				return 5;
+				return 4;
 			default:
-				return 4; // Default building
+				return 5; // Default building
 		}
 	}
 

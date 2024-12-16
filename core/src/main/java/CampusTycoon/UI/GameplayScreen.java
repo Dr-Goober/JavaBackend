@@ -19,11 +19,11 @@ public class GameplayScreen implements Screen{
         GameUtils.createGameplayUI();
         stateChanged = false;  // Reset stateChanged when the screen is shown
     }
-    
+
     @Override
     public void render(float delta) {
         timer.update(delta); // Update the timer every frame
-        
+
 
         // Check if the timer has ended and stateChanged is false
         if (timer.hasEnded() && !stateChanged) {
@@ -33,25 +33,25 @@ public class GameplayScreen implements Screen{
         ScreenUtils.clear(Color.BLACK);
         Drawer.drawAll();
     }
-        
+
         @Override
         public void resize(int width, int height) {
             Window.updateResolution(width, height);
             Drawer.updateAll();
         }
-    
+
         @Override
         public void pause() {
         }
-    
+
         @Override
         public void resume() {
         }
-    
+
         @Override
         public void hide() {
         }
-    
+
         @Override
         public void dispose() {
             // Destroy screen's assets here.

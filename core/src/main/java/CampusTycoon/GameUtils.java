@@ -55,6 +55,7 @@ public class GameUtils {
 		buttonNewGame.setAnchor(Anchor.Centre);
 
 		Button buttonLeaderboard = new Button("Leaderboard.png", 0, 20, 262, 66);
+        buttonLeaderboard.setClickAction(Actions.OpenLeaderboardScreen);
 		buttonLeaderboard.setAnchor(Anchor.Centre);
 
 		Button buttonSettings = new Button("Settings.png", 0, -50, 262, 66);
@@ -75,6 +76,21 @@ public class GameUtils {
 		// (Allows buttons to be clicked and things to actually happen)
 		InputHandler.add(startScreenButtonList);
 	}
+
+   public static void createLeaderboardUI() {
+        Button buttonMainMenu = new Button("Main Menu.png", 0, 90, 262, 66);
+        buttonMainMenu.setClickAction(Actions.OpenStartScreen);
+        buttonMainMenu.setAnchor(Anchor.Centre);
+
+        List<Component> leaderboardScreenList = Arrays.asList(
+            buttonMainMenu);
+
+        for (Component button : leaderboardScreenList) {
+            Drawer.add(1,button);
+        };
+
+        InputHandler.add(leaderboardScreenList);
+    }
 
 	public static void createGameplayUI() {
 		Button buttonAccommodation = new Button("Buildings\\Accommodation.png", -250, 10, 90, 66);
@@ -121,10 +137,8 @@ public class GameUtils {
 		buttonRestaurant.setClickAction(Actions.ToggleRestaurantBuilding);
 		buttonRestaurant.setAnchor(Anchor.BottomCentre);
 
-		MenuText restaurantCount = new MenuText(
-				String.valueOf(BuildingCounter.getBuildingCount(Restaurant.buildingName)), 140, 110, 2f, 2f);
-		restaurantCount.setAnchor(Anchor.BottomCentre);
-		BuildingCounter.UI.add(restaurantCount);
+        Button buttonRestaurantText = new Button("Buildings\\RestaurantText.png", 150, 55, 90, 66);
+		buttonRestaurantText.setAnchor(Anchor.BottomCentre);
 
 		Button buttonPH6 = new Button("Placeholder.png", 250, 10, 90, 66);
 		buttonPH6.setAnchor(Anchor.BottomCentre);
@@ -150,7 +164,7 @@ public class GameUtils {
 		buttonSatisfaction.setAnchor(Anchor.TopRight);
 
 		List<Component> UIButtons = Arrays.asList(
-				buttonAccommodation, buttonStudy, buttonCafe, buttonRelax, buttonRestaurant, buttonPH6,
+				buttonAccommodation, buttonStudy, buttonCafe, buttonRelax, buttonRestaurant, buttonPH6, buttonRestaurantText,
 				notif1, notif2, buttonSatisfaction,
 				buttonDollar, buttonHouses, buttonPeople);
 
@@ -184,7 +198,7 @@ public class GameUtils {
 		Timer.text = timerText;
 
 		List<Component> textElements = Arrays.asList(satisfactionText, notifText1, notifText2, buildingCounterText,
-				accommodationCount, studyCount, cafeCount, relaxCount, restaurantCount, timerText);
+				accommodationCount, studyCount, cafeCount, relaxCount, timerText);
 
 		// Add all text to the drawQueue
 		for (Component text : textElements) {

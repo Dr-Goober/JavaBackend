@@ -34,6 +34,11 @@ public class Button extends Component {
 		System.out.println("Screen changed to GameplayScreen");
 	}
 
+    protected static void openLeaderboardScreen(Boolean isAction){
+        ScreenUtils.OpenLeaderboardScreen();
+        System.out.println("Screen changed to leaderboardScreen");
+    }
+
 	protected static void openEventPopup(Boolean isAction) {
 		GameUtils.currentEvent = new Event();
 		System.out.println("Event opened");
@@ -90,7 +95,9 @@ public class Button extends Component {
 			case Actions.OpenGameplayScreen:
 				action = a -> openGameplayScreen(a);
 				break;
-
+            case Actions.OpenLeaderboardScreen:
+                action = a -> openLeaderboardScreen(a);
+                break;
 			// Events
 			case Actions.OpenEventPopup:
 				action = a -> openEventPopup(a);

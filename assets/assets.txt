@@ -8,6 +8,9 @@ Buildings/Cafeteria.png
 Buildings/CafeteriaTransparent.png
 Buildings/Relaxation.png
 Buildings/RelaxationTransparent.png
+Buildings/Restaurant.png
+Buildings/RestaurantText.png
+Buildings/RestaurantTransparent.png
 Buildings/SpaceStation.png
 Buildings/Study.png
 Buildings/StudyTransparent.png
