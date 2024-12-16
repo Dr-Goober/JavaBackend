@@ -21,7 +21,7 @@ public class LeaderboardScreen implements Screen{
 
     @Override
     public void render(float delta) {
-        ScreenUtils.clear(Color.BLACK);
+        ScreenUtils.clear(Color.GREEN);
         Drawer.drawAll();
     }
 

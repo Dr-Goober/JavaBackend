@@ -78,7 +78,7 @@ public class GameUtils {
 	}
 
    public static void createLeaderboardUI() {
-        Button buttonMainMenu = new Button("Main Menu.png", 0, 90, 262, 66);
+        Button buttonMainMenu = new Button("Main Menu.png", 0, -320, 262, 66);
         buttonMainMenu.setClickAction(Actions.OpenStartScreen);
         buttonMainMenu.setAnchor(Anchor.Centre);
 
@@ -139,6 +139,12 @@ public class GameUtils {
 
         Button buttonRestaurantText = new Button("Buildings\\RestaurantText.png", 150, 55, 90, 66);
 		buttonRestaurantText.setAnchor(Anchor.BottomCentre);
+
+        MenuText restaurantCount = new MenuText(
+            String.valueOf(BuildingCounter.getBuildingCount(Restaurant.buildingName)), 150, 55, 90, 66);
+        relaxCount.setAnchor(Anchor.BottomCentre);
+        BuildingCounter.UI.add(relaxCount);
+
 
 		Button buttonPH6 = new Button("Placeholder.png", 250, 10, 90, 66);
 		buttonPH6.setAnchor(Anchor.BottomCentre);
@@ -260,12 +266,18 @@ public class GameUtils {
 		buttonMainMenu.setClickAction(Actions.OpenStartScreen);
 		buttonMainMenu.setAnchor(Anchor.Centre);
 
-		Button buttonNewGame = new Button("New Game.png", 0, 20, 262, 66);
+        Button buttonLeaderboard = new Button("Leaderboard.png", 0, 20, 262, 66);
+        buttonLeaderboard.setClickAction(Actions.OpenLeaderboardScreen);
+        buttonLeaderboard.setAnchor(Anchor.Centre);
+
+		Button buttonNewGame = new Button("New Game.png", 0, -50, 262, 66);
 		buttonNewGame.setClickAction(Actions.OpenGameplayScreen);
 		buttonNewGame.setAnchor(Anchor.Centre);
 
+
 		List<Component> endScreenButtonList = Arrays.asList(
 				buttonMainMenu,
+                buttonLeaderboard,
 				buttonNewGame);
 
 		// Add all buttons to the drawQueue
